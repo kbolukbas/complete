@@ -40,11 +40,11 @@ public class WebController implements WebMvcConfigurer {
 
 	@PostMapping("/")
 	public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
-		System.out.println(personForm.toString());
+		
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
-
-		return "redirect:/results";
+		
+		return "results";
 	}
 }
